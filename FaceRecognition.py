@@ -90,10 +90,12 @@ def FaceRecognition():
         cv2.waitKey(1)
 
 def main():
-    newEntry = True
+    choice = input("Add New Entry? Y/N ")
+    newEntry = True if choice == "Y" or choice == "y" else False
     while newEntry:
         PicToDB()
-        newEntry = True if input("Add New Entry? Y/N ") == "Y" else False
+        choice = input("Add New Entry? Y/N ")
+        newEntry = True if choice == "Y" or choice == "y" else False
     print("Thinking...")
     FaceRecognition()
 main()
